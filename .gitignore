@@ -8,8 +8,8 @@ trace.txt
 dag.png
 
 # Your actual params file (contains real paths) — keep params.example.yaml in git instead
-params.yaml
-samplesheet.csv
+/params.yaml
+/samplesheet.csv
 
 # Python
 __pycache__/
