@@ -1,0 +1,31 @@
+# Copy this file to params.yaml and fill in paths for your environment.
+
+output_dir: "/path/to/output"
+
+sample_sheet: "samplesheet.csv"   # csv with columns: sample,bam
+
+threads: 64
+
+bin_size: 50000
+
+ref_genome: "/path/to/reference/hg38.fa"
+
+# Centromere / no-gene region file (bed-like: chr, start, end, type),
+# derived from ichorCNA's public centromere annotation. Bundled in this repo
+# at resources/centromere_plus_nogenes.bed, so this default works as-is.
+centromere: "resources/centromere_plus_nogenes.bed"
+
+# --- CNVkit ---
+cnvkit_reference: "/path/to/cnvkit/hg38_targets_50kb_flat_reference.cnn"
+
+# --- readCounter (HMMcopy utils) ---
+readcounter_bin: "/path/to/hmmcopy_utils/bin/readCounter"
+
+# --- ichorCNA ---
+ichorcna_script: "/path/to/ichorCNA/scripts/runIchorCNA.R"
+ichorcna_gc_wig: "/path/to/ichorCNA/inst/extdata/gc_hg38_50kb.wig"
+ichorcna_map_wig: "/path/to/ichorCNA/inst/extdata/map_hg38_50kb.wig"
+ichorcna_centromere: "/path/to/ichorCNA/inst/extdata/GRCh38.GCA_000001405.2_centromere_acen.txt"
+
+# --- AnnotSV ---
+annotsv_bin: "AnnotSV"   # or full path to the AnnotSV binary
