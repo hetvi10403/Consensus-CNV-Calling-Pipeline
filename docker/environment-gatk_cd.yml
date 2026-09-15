@@ -7,4 +7,5 @@ dependencies:
   - cnvpytor
   - hmmcopy       # provides the readCounter binary
   - r-ichorcna
+  - pandas
   - git           # needed once, to pull ichorCNA's scripts/ directory

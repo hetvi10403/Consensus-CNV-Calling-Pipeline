@@ -27,6 +27,7 @@ process ANNOTSV {
     ${params.annotsv_bin} \
         -SVinputFile ${sample}_CNV.bed \
         -outputFile ${sample}_annotSV.tsv \
+        -annotationsDir ${params.annotsv_annotations_dir} \
         -svtBEDcol 4 \
         -samplesidBEDcol 5
     """

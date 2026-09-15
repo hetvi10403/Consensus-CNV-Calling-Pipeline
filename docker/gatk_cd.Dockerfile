@@ -17,6 +17,14 @@ RUN micromamba install -y -n base -f /tmp/environment.yml && \
 
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 
+# Workaround for a bug in cnvpytor 1.3.2 (bioconda): genome.py's
+# download_resources() calls res.split("/") but res is a PosixPath,
+# not a str, so it crashes with AttributeError. Fixed upstream on
+# GitHub master but not yet released to bioconda.
+RUN sed -i 's/fn = res\.split("\/")\[-1\]/fn = str(res).split("\/")[-1]/g' \
+    /opt/conda/lib/python3.13/site-packages/cnvpytor/genome.py && \
+    micromamba run -n base cnvpytor -download
+
 USER root
 RUN git clone --depth 1 https://github.com/broadinstitute/ichorCNA.git /tmp/ichorCNA && \
     mkdir -p /opt/ichorCNA && \

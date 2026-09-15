@@ -21,3 +21,9 @@ __pycache__/
 # Editor
 .vscode/
 .idea/
+
+# Nextflow run artifacts (local, not part of source)
+nf.log
+dag.dot
+*.Zone.Identifier
+nextflow_1.config
