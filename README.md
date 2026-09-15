@@ -6,6 +6,21 @@ into a single unified call set, and annotates them with [AnnotSV](https://lbgi.f
 
 [![CI](https://github.com/hetvi10403/Consensus-CNV-Calling-Pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/hetvi10403/Consensus-CNV-Calling-Pipeline/actions/workflows/ci.yml)
 
+## Validation status
+
+Validated end-to-end on sample ND01039 (ENA project PRJEB87628; expected
+finding: PARK2 deletion, chr6, ~156kb). The consensus pipeline produced
+a deletion call at **chr6:162,089,831-162,250,000**, confirmed by direct
+coordinate overlap with the known PARK2 locus.
+
+Gene-level annotation via AnnotSV is fully integrated (`modules/annotsv.nf`)
+and works end-to-end once pointed at a valid annotation data directory.
+The upstream AnnotSV annotation host (lbgi.fr) recently migrated domains,
+which breaks the tool's default `INSTALL_annotations.sh` for all users,
+not specific to this pipeline. See the comments in `modules/annotsv.nf`
+and `params.yaml` for how to point `annotsv_annotations_dir` at a working
+annotation install.
+
 ## Pipeline overview
 
 ```
