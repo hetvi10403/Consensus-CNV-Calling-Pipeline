@@ -22,7 +22,7 @@ ARG MAMBA_DOCKERFILE_ACTIVATE=1
 # not a str, so it crashes with AttributeError. Fixed upstream on
 # GitHub master but not yet released to bioconda.
 RUN sed -i 's/fn = res\.split("\/")\[-1\]/fn = str(res).split("\/")[-1]/g' \
-    /opt/conda/lib/python3.13/site-packages/cnvpytor/genome.py && \
+    /opt/conda/lib/python3.*/site-packages/cnvpytor/genome.py && \
     micromamba run -n base cnvpytor -download
 
 USER root
