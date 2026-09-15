@@ -15,11 +15,7 @@ coordinate overlap with the known PARK2 locus.
 
 Gene-level annotation via AnnotSV is fully integrated (`modules/annotsv.nf`)
 and works end-to-end once pointed at a valid annotation data directory.
-The upstream AnnotSV annotation host (lbgi.fr) recently migrated domains,
-which breaks the tool's default `INSTALL_annotations.sh` for all users,
-not specific to this pipeline. See the comments in `modules/annotsv.nf`
-and `params.yaml` for how to point `annotsv_annotations_dir` at a working
-annotation install.
+See `params.yaml` and the comments in `modules/annotsv.nf` for setup notes.
 
 ## Pipeline overview
 
